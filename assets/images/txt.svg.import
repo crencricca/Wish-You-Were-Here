@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1hlhq555kehw"
-path="res://.godot/imported/tasha-kostyuk-roPGTtmZZ5U-unsplash.png-1f6acc8cf4a6c54820b498aed8059be7.ctex"
+uid="uid://du4lo82bixmwy"
+path="res://.godot/imported/txt.svg-dca97555c392c5f1847d23448fabd2a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/tasha-kostyuk-roPGTtmZZ5U-unsplash.png"
-dest_files=["res://.godot/imported/tasha-kostyuk-roPGTtmZZ5U-unsplash.png-1f6acc8cf4a6c54820b498aed8059be7.ctex"]
+source_file="res://assets/images/txt.svg"
+dest_files=["res://.godot/imported/txt.svg-dca97555c392c5f1847d23448fabd2a7.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

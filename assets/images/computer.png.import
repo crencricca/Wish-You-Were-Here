@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpqg1u0y6o713"
-path="res://.godot/imported/boxicons-n1W1kj4cnXk-unsplash.png-1958b8837592c9963a9abb88eeaa32ee.ctex"
+uid="uid://d1hlhq555kehw"
+path="res://.godot/imported/computer.png-4c15ac2962b03f48662b6f22dcb349e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/boxicons-n1W1kj4cnXk-unsplash.png"
-dest_files=["res://.godot/imported/boxicons-n1W1kj4cnXk-unsplash.png-1958b8837592c9963a9abb88eeaa32ee.ctex"]
+source_file="res://assets/images/computer.png"
+dest_files=["res://.godot/imported/computer.png-4c15ac2962b03f48662b6f22dcb349e0.ctex"]
 
 [params]
 

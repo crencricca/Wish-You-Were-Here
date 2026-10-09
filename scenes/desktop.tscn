@@ -2,9 +2,28 @@
 
 [ext_resource type="Texture2D" uid="uid://bor6ecf3utb00" path="res://assets/images/desktop.jpg" id="1_xxa2h"]
 [ext_resource type="Texture2D" uid="uid://dxb3riwdxvuy6" path="res://assets/images/folder.png" id="2_7gre8"]
-[ext_resource type="Texture2D" uid="uid://du4lo82bixmwy" path="res://assets/images/insaanu-studio-3xT6o0MoC7w-unsplash.svg" id="2_81rff"]
+[ext_resource type="Texture2D" uid="uid://du4lo82bixmwy" path="res://assets/images/txt.svg" id="2_81rff"]
+[ext_resource type="Script" uid="uid://jkgaheca5mwd" path="res://desktop.gd" id="4_desktop"]
+[ext_resource type="PackedScene" uid="uid://p3fw06ovrg6j" path="res://scenes/text_editor.tscn" id="5_textwin"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_icon"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_icon_pressed"]
+bg_color = Color(0, 0, 0.5, 0.32)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_icon_hover"]
+bg_color = Color(0, 0, 0.5, 0.18)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [node name="Desktop" type="Node2D" unique_id=503711665]
+script = ExtResource("4_desktop")
 
 [node name="BG" type="Sprite2D" parent="." unique_id=642344801]
 position = Vector2(592, 298)
@@ -12,11 +31,13 @@ scale = Vector2(0.21041667, 0.19735478)
 texture = ExtResource("1_xxa2h")
 
 [node name="Text File" type="Sprite2D" parent="." unique_id=436141959]
-position = Vector2(76.187515, 73.84375)
-scale = Vector2(0.107754655, 0.1089699)
+position = Vector2(73, 76)
+scale = Vector2(0.098148145, 0.099999994)
 texture = ExtResource("2_81rff")
 
-[node name="README" type="RichTextLabel" parent="." unique_id=214377244]
+[node name="README" type="Node2D" parent="." unique_id=827520081]
+
+[node name="README Label" type="RichTextLabel" parent="README" unique_id=214377244]
 offset_left = 25.187508
 offset_top = 120.843735
 offset_right = 122.18751
@@ -26,6 +47,18 @@ theme_override_font_sizes/normal_font_size = 16
 text = "README"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="README Icon" type="Button" parent="README" unique_id=534099686]
+offset_left = 20.0
+offset_top = 22.0
+offset_right = 126.0
+offset_bottom = 155.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_icon")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_icon_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_icon_hover")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_icon_pressed")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_icon")
 
 [node name="1990s" type="Node2D" parent="." unique_id=1890799011]
 position = Vector2(-4, -127)
@@ -66,7 +99,7 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="2010s" type="Node2D" parent="." unique_id=1591937877]
-position = Vector2(-7, 86)
+position = Vector2(-6, 73)
 
 [node name="Icon" type="Sprite2D" parent="2010s" unique_id=930895050]
 position = Vector2(78.249985, 315.49997)
@@ -83,3 +116,18 @@ theme_override_font_sizes/normal_font_size = 16
 text = "2010s"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="README App" parent="." unique_id=397822544 instance=ExtResource("5_textwin")]
+visible = false
+position = Vector2(332, 150)
+file_name = "README.txt"
+read_only = true
+body = "
+Dear [USER],
+
+This is a sample letter from your dad, who mysteriously disappeared! Your task is to dig through the old family computer and find clues as to where he might have gone. The computer contains an archive of your life over the past 3 decades that you've never seen before.
+
+Love,
+Dad"
+
+[connection signal="pressed" from="README/README Icon" to="." method="_on_readme_icon_pressed"]
