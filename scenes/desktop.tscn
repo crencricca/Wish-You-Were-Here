@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cq6iibnr543yu"]
+
+[ext_resource type="Texture2D" uid="uid://bor6ecf3utb00" path="res://assets/images/desktop.jpg" id="1_xxa2h"]
+
+[node name="Desktop" type="Node2D" unique_id=503711665]
+
+[node name="BG" type="Sprite2D" parent="." unique_id=642344801]
+position = Vector2(584, 292)
+scale = Vector2(0.21041667, 0.19735478)
+texture = ExtResource("1_xxa2h")

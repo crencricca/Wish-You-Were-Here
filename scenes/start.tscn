@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://d2o06ggsbbtje"]
+
+[ext_resource type="Texture2D" uid="uid://chg2aeff4iim8" path="res://assets/images/rainbow.svg" id="1_bodal"]
+[ext_resource type="FontFile" uid="uid://bcg7l37xwsoe8" path="res://assets/fonts/Authentic Signature.otf" id="2_kdmts"]
+[ext_resource type="FontFile" uid="uid://d1iec5rcswjv5" path="res://assets/fonts/w95fa/W95F.otf" id="3_0auqf"]
+[ext_resource type="Texture2D" uid="uid://d1hlhq555kehw" path="res://assets/images/tasha-kostyuk-roPGTtmZZ5U-unsplash.png" id="4_kdmts"]
+[ext_resource type="Script" uid="uid://b4dsb7my614x1" path="res://start.gd" id="5_0auqf"]
+
+[node name="Start" type="Node2D" unique_id=1483563860]
+script = ExtResource("5_0auqf")
+
+[node name="BG" type="ColorRect" parent="." unique_id=1701322259]
+offset_right = 1153.0
+offset_bottom = 652.0
+color = Color(0, 0, 0, 1)
+
+[node name="Rainbow" type="Sprite2D" parent="." unique_id=581857487]
+position = Vector2(887, 328)
+scale = Vector2(0.5006944, 0.48166668)
+texture = ExtResource("1_bodal")
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=1452648671]
+offset_left = 59.0
+offset_top = 32.0
+offset_right = 578.0
+offset_bottom = 118.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_kdmts")
+theme_override_font_sizes/normal_font_size = 82
+text = "Wish You Were Here"
+
+[node name="Computer" type="Sprite2D" parent="." unique_id=1914167895]
+position = Vector2(416.82813, 376.21094)
+scale = Vector2(0.18858592, 0.16339454)
+texture = ExtResource("4_kdmts")
+
+[node name="Menu" type="CanvasGroup" parent="." unique_id=1388042201]
+
+[node name="Start" type="Button" parent="Menu" unique_id=1504908640]
+offset_left = 252.0
+offset_top = 228.35464
+offset_right = 407.0
+offset_bottom = 277.35464
+rotation = -0.0927435
+theme_override_colors/font_color = Color(0.20392157, 1, 0.4117647, 1)
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_fonts/font = ExtResource("3_0auqf")
+theme_override_font_sizes/font_size = 42
+text = "Start"
+
+[node name="Exit" type="Button" parent="Menu" unique_id=1333167388]
+offset_left = 253.0
+offset_top = 294.35464
+offset_right = 408.0
+offset_bottom = 343.35464
+rotation = -0.0927435
+theme_override_colors/font_color = Color(0.20392157, 1, 0.4117647, 1)
+theme_override_fonts/font = ExtResource("3_0auqf")
+theme_override_font_sizes/font_size = 42
+text = "Exit"
+
+[node name="Settings" type="Button" parent="Menu" unique_id=1437139414]
+visible = false
+offset_left = 915.0
+offset_top = 287.0
+offset_right = 1070.0
+offset_bottom = 336.0
+theme_override_fonts/font = ExtResource("3_0auqf")
+theme_override_font_sizes/font_size = 42
+text = "Settings"
+
+[node name="Quit" type="Button" parent="Menu" unique_id=1665082821]
+visible = false
+offset_left = 914.0
+offset_top = 341.0
+offset_right = 1069.0
+offset_bottom = 390.0
+theme_override_fonts/font = ExtResource("3_0auqf")
+theme_override_font_sizes/font_size = 42
+text = "Quit"
+
+[connection signal="pressed" from="Menu/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Menu/Exit" to="." method="_on_exit_pressed"]
