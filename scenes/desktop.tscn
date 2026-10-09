@@ -1,10 +1,85 @@
 [gd_scene format=3 uid="uid://cq6iibnr543yu"]
 
 [ext_resource type="Texture2D" uid="uid://bor6ecf3utb00" path="res://assets/images/desktop.jpg" id="1_xxa2h"]
+[ext_resource type="Texture2D" uid="uid://dxb3riwdxvuy6" path="res://assets/images/folder.png" id="2_7gre8"]
+[ext_resource type="Texture2D" uid="uid://du4lo82bixmwy" path="res://assets/images/insaanu-studio-3xT6o0MoC7w-unsplash.svg" id="2_81rff"]
 
 [node name="Desktop" type="Node2D" unique_id=503711665]
 
 [node name="BG" type="Sprite2D" parent="." unique_id=642344801]
-position = Vector2(584, 292)
+position = Vector2(592, 298)
 scale = Vector2(0.21041667, 0.19735478)
 texture = ExtResource("1_xxa2h")
+
+[node name="Text File" type="Sprite2D" parent="." unique_id=436141959]
+position = Vector2(76.187515, 73.84375)
+scale = Vector2(0.107754655, 0.1089699)
+texture = ExtResource("2_81rff")
+
+[node name="README" type="RichTextLabel" parent="." unique_id=214377244]
+offset_left = 25.187508
+offset_top = 120.843735
+offset_right = 122.18751
+offset_bottom = 154.84373
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+text = "README"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="1990s" type="Node2D" parent="." unique_id=1890799011]
+position = Vector2(-4, -127)
+
+[node name="Icon" type="Sprite2D" parent="1990s" unique_id=2084922651]
+position = Vector2(78.249985, 315.49997)
+scale = Vector2(0.01837501, 0.019044764)
+texture = ExtResource("2_7gre8")
+
+[node name="Name" type="RichTextLabel" parent="1990s" unique_id=252685574]
+offset_left = 31.0
+offset_top = 347.0
+offset_right = 128.0
+offset_bottom = 381.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+text = "1990s"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="2000s" type="Node2D" parent="." unique_id=609898096]
+position = Vector2(-6, -25)
+
+[node name="Icon" type="Sprite2D" parent="2000s" unique_id=1410589815]
+position = Vector2(78.249985, 315.49997)
+scale = Vector2(0.01837501, 0.019044764)
+texture = ExtResource("2_7gre8")
+
+[node name="Name" type="RichTextLabel" parent="2000s" unique_id=580050706]
+offset_left = 31.0
+offset_top = 347.0
+offset_right = 128.0
+offset_bottom = 381.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+text = "2000s"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="2010s" type="Node2D" parent="." unique_id=1591937877]
+position = Vector2(-7, 86)
+
+[node name="Icon" type="Sprite2D" parent="2010s" unique_id=930895050]
+position = Vector2(78.249985, 315.49997)
+scale = Vector2(0.01837501, 0.019044764)
+texture = ExtResource("2_7gre8")
+
+[node name="Name" type="RichTextLabel" parent="2010s" unique_id=1771187656]
+offset_left = 31.0
+offset_top = 347.0
+offset_right = 128.0
+offset_bottom = 381.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+text = "2010s"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

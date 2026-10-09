@@ -5,6 +5,101 @@
 [ext_resource type="FontFile" uid="uid://d1iec5rcswjv5" path="res://assets/fonts/w95fa/W95F.otf" id="3_0auqf"]
 [ext_resource type="Texture2D" uid="uid://d1hlhq555kehw" path="res://assets/images/tasha-kostyuk-roPGTtmZZ5U-unsplash.png" id="4_kdmts"]
 [ext_resource type="Script" uid="uid://b4dsb7my614x1" path="res://start.gd" id="5_0auqf"]
+[ext_resource type="Texture2D" uid="uid://byslvtd21cjiy" path="res://assets/images/power_icon.svg" id="6_power"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_terminal_idle"]
+content_margin_left = 12.0
+content_margin_top = 2.0
+content_margin_right = 12.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_terminal_pressed"]
+content_margin_left = 12.0
+content_margin_top = 2.0
+content_margin_right = 12.0
+content_margin_bottom = 2.0
+bg_color = Color(0.14, 0.75, 0.3, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_terminal_hover"]
+content_margin_left = 12.0
+content_margin_top = 2.0
+content_margin_right = 12.0
+content_margin_bottom = 2.0
+bg_color = Color(0.55, 1, 0.66, 1)
+shadow_color = Color(0.2, 1, 0.41, 0.45)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_terminal_bar"]
+content_margin_left = 12.0
+content_margin_top = 2.0
+content_margin_right = 12.0
+content_margin_bottom = 2.0
+bg_color = Color(0.20392157, 1, 0.4117647, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_power_normal"]
+content_margin_left = 6.0
+content_margin_top = 4.0
+content_margin_right = 6.0
+content_margin_bottom = 4.0
+bg_color = Color(0.17, 0.165, 0.15, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 5
+border_color = Color(0.06, 0.06, 0.055, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_power_pressed"]
+content_margin_left = 6.0
+content_margin_top = 4.0
+content_margin_right = 6.0
+content_margin_bottom = 4.0
+bg_color = Color(0.12, 0.115, 0.105, 1)
+border_width_left = 2
+border_width_top = 5
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.06, 0.06, 0.055, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0.2, 1, 0.41, 0.4)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_power_hover"]
+content_margin_left = 6.0
+content_margin_top = 4.0
+content_margin_right = 6.0
+content_margin_bottom = 4.0
+bg_color = Color(0.22, 0.215, 0.2, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 5
+border_color = Color(0.06, 0.06, 0.055, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0.2, 1, 0.41, 0.4)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_power_focus"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2, 1, 0.41, 0.8)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="Start" type="Node2D" unique_id=1483563860]
 script = ExtResource("5_0auqf")
@@ -20,64 +115,83 @@ scale = Vector2(0.5006944, 0.48166668)
 texture = ExtResource("1_bodal")
 
 [node name="Title" type="RichTextLabel" parent="." unique_id=1452648671]
-offset_left = 59.0
-offset_top = 32.0
-offset_right = 578.0
-offset_bottom = 118.0
+offset_left = 86.0
+offset_top = 34.0
+offset_right = 605.0
+offset_bottom = 120.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("2_kdmts")
 theme_override_font_sizes/normal_font_size = 82
 text = "Wish You Were Here"
 
 [node name="Computer" type="Sprite2D" parent="." unique_id=1914167895]
-position = Vector2(416.82813, 376.21094)
-scale = Vector2(0.18858592, 0.16339454)
+position = Vector2(416.00003, 385)
+scale = Vector2(0.19433594, 0.17114453)
 texture = ExtResource("4_kdmts")
 
-[node name="Menu" type="CanvasGroup" parent="." unique_id=1388042201]
-
-[node name="Start" type="Button" parent="Menu" unique_id=1504908640]
-offset_left = 252.0
-offset_top = 228.35464
-offset_right = 407.0
-offset_bottom = 277.35464
+[node name="Start" type="Button" parent="." unique_id=1504908640]
+offset_left = 242.0
+offset_top = 258.0
+offset_right = 410.0
+offset_bottom = 327.0
 rotation = -0.0927435
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.20392157, 1, 0.4117647, 1)
-theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_focus_color = Color(0.02, 0.09, 0.05, 1)
+theme_override_colors/font_pressed_color = Color(0.02, 0.09, 0.05, 1)
+theme_override_colors/font_hover_color = Color(0.02, 0.09, 0.05, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.02, 0.09, 0.05, 1)
 theme_override_fonts/font = ExtResource("3_0auqf")
-theme_override_font_sizes/font_size = 42
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_terminal_idle")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_terminal_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_terminal_hover")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_terminal_pressed")
+theme_override_styles/focus = SubResource("StyleBoxFlat_terminal_bar")
 text = "Start"
+metadata/_edit_use_anchors_ = true
 
-[node name="Exit" type="Button" parent="Menu" unique_id=1333167388]
-offset_left = 253.0
-offset_top = 294.35464
-offset_right = 408.0
-offset_bottom = 343.35464
-rotation = -0.0927435
-theme_override_colors/font_color = Color(0.20392157, 1, 0.4117647, 1)
-theme_override_fonts/font = ExtResource("3_0auqf")
-theme_override_font_sizes/font_size = 42
-text = "Exit"
+[node name="Exit" type="Button" parent="." unique_id=1333167388]
+anchors_preset = -1
+offset_left = 412.0
+offset_top = 385.0
+offset_right = 456.0
+offset_bottom = 425.0
+rotation = -0.09513369
+mouse_default_cursor_shape = 2
+theme_override_colors/icon_normal_color = Color(0.2, 1, 0.41, 0.7)
+theme_override_colors/icon_focus_color = Color(0.2, 1, 0.41, 1)
+theme_override_colors/icon_pressed_color = Color(0.2, 1, 0.41, 1)
+theme_override_colors/icon_hover_color = Color(0.2, 1, 0.41, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.2, 1, 0.41, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_power_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_power_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_power_hover")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_power_pressed")
+theme_override_styles/focus = SubResource("StyleBoxFlat_power_focus")
+icon = ExtResource("6_power")
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="Settings" type="Button" parent="Menu" unique_id=1437139414]
+[node name="Line2D" type="Line2D" parent="." unique_id=773689953]
 visible = false
-offset_left = 915.0
-offset_top = 287.0
-offset_right = 1070.0
-offset_bottom = 336.0
-theme_override_fonts/font = ExtResource("3_0auqf")
-theme_override_font_sizes/font_size = 42
-text = "Settings"
+position = Vector2(447.92844, 391.00006)
+rotation = -1.6478865
+scale = Vector2(0.15901032, 0.1430335)
+points = PackedVector2Array(276, 829, 0, 0)
+closed = true
 
-[node name="Quit" type="Button" parent="Menu" unique_id=1665082821]
-visible = false
-offset_left = 914.0
-offset_top = 341.0
-offset_right = 1069.0
-offset_bottom = 390.0
-theme_override_fonts/font = ExtResource("3_0auqf")
-theme_override_font_sizes/font_size = 42
+[node name="Power Off" type="RichTextLabel" parent="." unique_id=487643880]
+offset_left = 366.0
+offset_top = 390.00003
+offset_right = 405.4199
+offset_bottom = 415.5604
+rotation = -0.12820476
+theme_override_colors/default_color = Color(0.20392157, 1, 0.4117647, 1)
+theme_override_fonts/normal_font = ExtResource("3_0auqf")
+theme_override_font_sizes/normal_font_size = 24
 text = "Quit"
+horizontal_alignment = 2
 
-[connection signal="pressed" from="Menu/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Menu/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

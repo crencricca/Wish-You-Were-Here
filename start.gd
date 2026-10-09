@@ -4,6 +4,12 @@ extends Node2D
 @export_file("*.tscn") var game_scene: String = "res://scenes/desktop.tscn"
 
 
+func _ready() -> void:
+	# Start is the only option on the screen, so keep it selected:
+	# the green bar shows right away and Enter/Space activates it.
+	$Start.grab_focus()
+
+
 func _on_start_pressed() -> void:
 	get_tree().change_scene_to_file(game_scene)
 
