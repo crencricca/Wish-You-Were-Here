@@ -3,10 +3,18 @@
 [ext_resource type="FontFile" uid="uid://d1iec5rcswjv5" path="res://assets/fonts/w95fa/W95F.otf" id="1_sdthn"]
 [ext_resource type="Script" uid="uid://bs14w7tep3dqg" path="res://text_window.gd" id="2_textwin"]
 [ext_resource type="Texture2D" uid="uid://du4lo82bixmwy" path="res://assets/images/txt.svg" id="3_txt"]
+[ext_resource type="StyleBox" uid="uid://b7wfr4m3shd0w" path="res://assets/styles/window_frame.tres" id="9_frame"]
 
 [node name="Text Window" type="Node2D" unique_id=226287507]
 script = ExtResource("2_textwin")
 icon = ExtResource("3_txt")
+
+[node name="Frame" type="Panel" parent="." unique_id=1529083471]
+offset_left = -3.0
+offset_top = -4.0
+offset_right = 491.0
+offset_bottom = 307.0
+theme_override_styles/panel = ExtResource("9_frame")
 
 [node name="Header" type="ColorRect" parent="." unique_id=580804736]
 offset_left = 1.0
