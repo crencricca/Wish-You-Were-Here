@@ -1,7 +1,10 @@
 class_name TextWindow
-extends Node2D
+extends AppWindow
 ## A Win95-style text file window. One scene, configured per instance:
-## README is read-only, Notes is editable.
+## README is read-only, Notes is editable. Closing only hides it, so
+## anything typed into Notes is kept.
+
+const APP_NAME := "Text File Editor"
 
 ## Shown in the title bar, e.g. "README.txt".
 @export var file_name := "Untitled.txt"
@@ -23,12 +26,10 @@ func _ready() -> void:
 
 
 func open() -> void:
-	show()
-	move_to_front()  # draw above other open windows
+	super()
 	if not read_only:
 		_editor.grab_focus()
 
 
-## Hides rather than frees, so anything typed into Notes is kept.
-func close() -> void:
-	hide()
+func _get_title() -> String:
+	return "%s - %s" % [APP_NAME, file_name]

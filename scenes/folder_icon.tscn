@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bq3fo1d2icn7k"]
+
+[ext_resource type="Script" path="res://folder_icon.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://dxb3riwdxvuy6" path="res://assets/images/folder.png" id="2_folder"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_icon"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_icon_pressed"]
+bg_color = Color(0, 0, 0.5, 0.32)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_icon_hover"]
+bg_color = Color(0, 0, 0.5, 0.18)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="Folder Icon" type="Node2D" unique_id=1124983670]
+script = ExtResource("1_script")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=301847562]
+position = Vector2(52.25, 37.5)
+scale = Vector2(0.01837501, 0.019044764)
+texture = ExtResource("2_folder")
+
+[node name="Name" type="RichTextLabel" parent="." unique_id=1690342218]
+offset_left = 5.0
+offset_top = 69.0
+offset_right = 102.0
+offset_bottom = 103.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+text = "New Folder"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=874120593]
+offset_right = 107.0
+offset_bottom = 104.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_icon")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_icon_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_icon_hover")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_icon_pressed")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_icon")

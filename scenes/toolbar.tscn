@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://bhtj84v0l6tgx"]
+
+[ext_resource type="FontFile" uid="uid://d1iec5rcswjv5" path="res://assets/fonts/w95fa/W95F.otf" id="1_wdy5x"]
+[ext_resource type="Texture2D" uid="uid://mcp4tenwmxp5" path="res://assets/images/heart.svg" id="2_0lhma"]
+[ext_resource type="Script" uid="uid://cgou3rj8uncl4" path="res://toolbar.gd" id="3_toolbar"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w95btn"]
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+bg_color = Color(0.7529412, 0.7529412, 0.7529412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w95btn_pressed"]
+content_margin_left = 7.0
+content_margin_top = 3.0
+content_margin_right = 5.0
+content_margin_bottom = 1.0
+bg_color = Color(0.6627451, 0.6627451, 0.6627451, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_focus"]
+
+[node name="Toolbar" type="Node2D" unique_id=147399699]
+script = ExtResource("3_toolbar")
+
+[node name="BG" type="ColorRect" parent="." unique_id=1966618948]
+offset_left = -1.0
+offset_top = 615.0
+offset_right = 1154.0
+offset_bottom = 648.0
+color = Color(0.69803923, 0.69803923, 0.69803923, 1)
+
+[node name="Button" type="Button" parent="." unique_id=1519933146]
+offset_left = 2.0
+offset_top = 618.0
+offset_right = 70.0
+offset_bottom = 645.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/h_separation = 4
+theme_override_constants/icon_max_width = 16
+theme_override_fonts/font = ExtResource("1_wdy5x")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_w95btn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w95btn_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w95btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
+text = "Start"
+icon = ExtResource("2_0lhma")
+
+[node name="Tabs" type="HBoxContainer" parent="." unique_id=1730254186]
+offset_left = 74.0
+offset_top = 618.0
+offset_right = 1150.0
+offset_bottom = 645.0
+mouse_filter = 2
+theme_override_constants/separation = 3
+
+[node name="TabTemplate" type="Button" parent="." unique_id=902417365]
+visible = false
+custom_minimum_size = Vector2(160, 27)
+offset_right = 160.0
+offset_bottom = 27.0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_constants/h_separation = 4
+theme_override_constants/icon_max_width = 16
+theme_override_fonts/font = ExtResource("1_wdy5x")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_w95btn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w95btn_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w95btn")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_w95btn_pressed")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
+toggle_mode = true
+text = "Window"
+alignment = 0
+text_overrun_behavior = 3
+clip_text = true

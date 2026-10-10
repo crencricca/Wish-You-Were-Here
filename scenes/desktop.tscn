@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://du4lo82bixmwy" path="res://assets/images/txt.svg" id="2_81rff"]
 [ext_resource type="Script" uid="uid://jkgaheca5mwd" path="res://desktop.gd" id="4_desktop"]
 [ext_resource type="PackedScene" uid="uid://p3fw06ovrg6j" path="res://scenes/text_editor.tscn" id="5_textwin"]
+[ext_resource type="PackedScene" uid="uid://bhtj84v0l6tgx" path="res://scenes/toolbar.tscn" id="6_toolbar"]
+[ext_resource type="PackedScene" uid="uid://bq3fo1d2icn7k" path="res://scenes/folder_icon.tscn" id="7_foldericon"]
+[ext_resource type="PackedScene" uid="uid://c8fw1ndwq0f5x" path="res://scenes/folder_window.tscn" id="8_folderwin"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_icon"]
 
@@ -60,62 +63,32 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_icon_hover")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_icon_pressed")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_icon")
 
-[node name="1990s" type="Node2D" parent="." unique_id=1890799011]
-position = Vector2(-4, -127)
+[node name="1990s" parent="." unique_id=1611720034 node_paths=PackedStringArray("window") instance=ExtResource("7_foldericon")]
+position = Vector2(22, 151)
+folder_name = "1990s"
+window = NodePath("../1990s Folder")
 
-[node name="Icon" type="Sprite2D" parent="1990s" unique_id=2084922651]
-position = Vector2(78.249985, 315.49997)
-scale = Vector2(0.01837501, 0.019044764)
-texture = ExtResource("2_7gre8")
+[node name="2000s" parent="." unique_id=780335962 node_paths=PackedStringArray("window") instance=ExtResource("7_foldericon")]
+position = Vector2(20, 253)
+folder_name = "2000s"
+window = NodePath("../2000s Folder")
 
-[node name="Name" type="RichTextLabel" parent="1990s" unique_id=252685574]
-offset_left = 31.0
-offset_top = 347.0
-offset_right = 128.0
-offset_bottom = 381.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 16
-text = "1990s"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
+[node name="2010s" parent="." unique_id=1056928473 node_paths=PackedStringArray("window") instance=ExtResource("7_foldericon")]
+position = Vector2(20, 351)
+folder_name = "2010s"
+window = NodePath("../2010s Folder")
 
-[node name="2000s" type="Node2D" parent="." unique_id=609898096]
-position = Vector2(-6, -25)
+[node name="1990s Folder" parent="." unique_id=449187623 instance=ExtResource("8_folderwin")]
+visible = false
+position = Vector2(300, 90)
 
-[node name="Icon" type="Sprite2D" parent="2000s" unique_id=1410589815]
-position = Vector2(78.249985, 315.49997)
-scale = Vector2(0.01837501, 0.019044764)
-texture = ExtResource("2_7gre8")
+[node name="2000s Folder" parent="." unique_id=1938045261 instance=ExtResource("8_folderwin")]
+visible = false
+position = Vector2(330, 120)
 
-[node name="Name" type="RichTextLabel" parent="2000s" unique_id=580050706]
-offset_left = 31.0
-offset_top = 347.0
-offset_right = 128.0
-offset_bottom = 381.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 16
-text = "2000s"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="2010s" type="Node2D" parent="." unique_id=1591937877]
-position = Vector2(-6, 73)
-
-[node name="Icon" type="Sprite2D" parent="2010s" unique_id=930895050]
-position = Vector2(78.249985, 315.49997)
-scale = Vector2(0.01837501, 0.019044764)
-texture = ExtResource("2_7gre8")
-
-[node name="Name" type="RichTextLabel" parent="2010s" unique_id=1771187656]
-offset_left = 31.0
-offset_top = 347.0
-offset_right = 128.0
-offset_bottom = 381.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 16
-text = "2010s"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
+[node name="2010s Folder" parent="." unique_id=267811540 instance=ExtResource("8_folderwin")]
+visible = false
+position = Vector2(360, 150)
 
 [node name="README App" parent="." unique_id=397822544 instance=ExtResource("5_textwin")]
 visible = false
@@ -129,5 +102,8 @@ This is a sample letter from your dad, who mysteriously disappeared! Your task i
 
 Love,
 Dad"
+
+[node name="Toolbar" parent="." unique_id=1288405533 instance=ExtResource("6_toolbar")]
+z_index = 1
 
 [connection signal="pressed" from="README/README Icon" to="." method="_on_readme_icon_pressed"]

@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cyu1xda8ud0x2"]
+
+[ext_resource type="FontFile" uid="uid://d1iec5rcswjv5" path="res://assets/fonts/w95fa/W95F.otf" id="1_abgot"]
+[ext_resource type="Texture2D" uid="uid://dxb3riwdxvuy6" path="res://assets/images/folder.png" id="2_mpvgd"]
+
+[node name="Folder App" type="Node2D" unique_id=729388574]
+
+[node name="Top Bar" type="ColorRect" parent="." unique_id=758415046]
+offset_top = -1.0
+offset_right = 488.0
+offset_bottom = 19.0
+color = Color(0, 0, 0.5019608, 1)
+
+[node name="Toolbar" type="ColorRect" parent="." unique_id=1423982186]
+offset_top = 19.0
+offset_right = 488.0
+offset_bottom = 39.0
+color = Color(0.69803923, 0.69803923, 0.69803923, 1)
+
+[node name="BG" type="ColorRect" parent="." unique_id=440931231]
+offset_top = 39.0
+offset_right = 488.0
+offset_bottom = 304.0
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=75417903]
+offset_left = 18.0
+offset_right = 47.0
+offset_bottom = 19.0
+theme_override_fonts/normal_font = ExtResource("1_abgot")
+theme_override_font_sizes/normal_font_size = 12
+text = "1990s"
+vertical_alignment = 1
+
+[node name="Folder" type="Sprite2D" parent="." unique_id=326660585]
+position = Vector2(10, 8)
+scale = Vector2(0.002500019, 0.003022993)
+texture = ExtResource("2_mpvgd")
+
+[node name="Toolbar Buttons" type="RichTextLabel" parent="." unique_id=631024283]
+offset_left = 5.0
+offset_top = 18.0
+offset_right = 177.0
+offset_bottom = 42.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_abgot")
+theme_override_font_sizes/normal_font_size = 12
+text = "File   Edit   View   Help  "
+vertical_alignment = 1
