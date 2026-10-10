@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://bcg7l37xwsoe8" path="res://assets/fonts/Authentic Signature.otf" id="2_kdmts"]
 [ext_resource type="FontFile" uid="uid://d1iec5rcswjv5" path="res://assets/fonts/w95fa/W95F.otf" id="3_0auqf"]
 [ext_resource type="Texture2D" uid="uid://d1hlhq555kehw" path="res://assets/images/computer.png" id="4_kdmts"]
-[ext_resource type="Script" uid="uid://b4dsb7my614x1" path="res://start.gd" id="5_0auqf"]
+[ext_resource type="Script" uid="uid://b4dsb7my614x1" path="res://scripts/start.gd" id="5_0auqf"]
 [ext_resource type="Texture2D" uid="uid://byslvtd21cjiy" path="res://assets/images/power_icon.svg" id="6_power"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_terminal_idle"]

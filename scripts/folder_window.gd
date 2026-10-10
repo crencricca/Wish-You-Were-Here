@@ -3,15 +3,10 @@ extends AppWindow
 ## A Win95-style folder window. One scene, configured per folder: the
 ## title bar and toolbar tab both show `folder_name`.
 
-## Changing this at runtime renames the title bar and toolbar tab.
-@export var folder_name := "New Folder":
-	set(value):
-		folder_name = value
-		if is_node_ready():
-			_title.text = value
-		title_changed.emit()
+## Set once at startup by the folder's desktop icon.
+@export var folder_name := "New Folder"
 
-@onready var _title: Label = $Title
+@onready var _title: RichTextLabel = $Title
 @onready var _close: Button = $"Close Button"
 ## Where the folder's items go. Empty for now.
 @onready var contents: HFlowContainer = $Contents

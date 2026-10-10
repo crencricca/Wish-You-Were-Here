@@ -6,8 +6,6 @@ extends Node2D
 ## The toolbar adds a tab when this fires and removes it on `closed`.
 signal opened
 signal closed
-## Fires whenever `title` changes, so the toolbar tab can follow along.
-signal title_changed
 
 ## Shown on this window's toolbar tab.
 @export var icon: Texture2D

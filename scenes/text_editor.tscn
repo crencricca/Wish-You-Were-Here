@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://p3fw06ovrg6j"]
 
 [ext_resource type="FontFile" uid="uid://d1iec5rcswjv5" path="res://assets/fonts/w95fa/W95F.otf" id="1_sdthn"]
-[ext_resource type="Script" uid="uid://bs14w7tep3dqg" path="res://text_window.gd" id="2_textwin"]
+[ext_resource type="Script" uid="uid://bs14w7tep3dqg" path="res://scripts/text_window.gd" id="2_textwin"]
 [ext_resource type="Texture2D" uid="uid://du4lo82bixmwy" path="res://assets/images/txt.svg" id="3_txt"]
 [ext_resource type="StyleBox" uid="uid://b7wfr4m3shd0w" path="res://assets/styles/window_frame.tres" id="9_frame"]
 
@@ -23,10 +23,15 @@ offset_right = 488.0
 offset_bottom = 31.0
 color = Color(0, 0, 0.5019608, 1)
 
+[node name="Text File" type="Sprite2D" parent="." unique_id=1318750246]
+position = Vector2(14, 15)
+scale = Vector2(0.017, 0.017)
+texture = ExtResource("3_txt")
+
 [node name="Text File Editor" type="RichTextLabel" parent="." unique_id=202840184]
-offset_left = 7.0
+offset_left = 25.0
 offset_top = -1.0
-offset_right = 126.0
+offset_right = 144.0
 offset_bottom = 31.0
 theme_override_fonts/normal_font = ExtResource("1_sdthn")
 theme_override_font_sizes/normal_font_size = 12
@@ -34,9 +39,9 @@ text = "Text File Editor -"
 vertical_alignment = 1
 
 [node name="File Name" type="RichTextLabel" parent="." unique_id=454852469]
-offset_left = 88.0
+offset_left = 106.0
 offset_top = -1.0
-offset_right = 207.0
+offset_right = 225.0
 offset_bottom = 32.0
 theme_override_fonts/normal_font = ExtResource("1_sdthn")
 theme_override_font_sizes/normal_font_size = 12

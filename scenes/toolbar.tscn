@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://d1iec5rcswjv5" path="res://assets/fonts/w95fa/W95F.otf" id="1_wdy5x"]
 [ext_resource type="Texture2D" uid="uid://mcp4tenwmxp5" path="res://assets/images/heart.svg" id="2_0lhma"]
-[ext_resource type="Script" uid="uid://cgou3rj8uncl4" path="res://toolbar.gd" id="3_toolbar"]
+[ext_resource type="Script" uid="uid://cgou3rj8uncl4" path="res://scripts/toolbar.gd" id="3_toolbar"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w95btn"]
 content_margin_left = 6.0

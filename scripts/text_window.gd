@@ -6,7 +6,8 @@ extends AppWindow
 
 const APP_NAME := "Text File Editor"
 
-## Shown in the title bar, e.g. "README.txt".
+## Shown in the title bar, e.g. "README.txt". Set once at startup by
+## the file's desktop icon.
 @export var file_name := "Untitled.txt"
 ## When on, the player can read and select text but not change it.
 @export var read_only := false

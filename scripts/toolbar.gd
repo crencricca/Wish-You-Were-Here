@@ -18,7 +18,6 @@ var _active: Node
 func track(window: AppWindow) -> void:
 	window.opened.connect(_on_window_opened.bind(window))
 	window.closed.connect(_on_window_closed.bind(window))
-	window.title_changed.connect(_on_window_title_changed.bind(window))
 	if window.visible:
 		_on_window_opened(window)
 
@@ -31,23 +30,14 @@ func _on_window_opened(window: Node) -> void:
 	if not _tabs.has(window):
 		var tab: Button = _template.duplicate()
 		tab.icon = window.icon
-		_label_tab(tab, window)
+		tab.text = get_window_name(window)
+		tab.tooltip_text = window.title  # full name when it's cut off
 		tab.show()
 		tab.pressed.connect(_on_tab_pressed.bind(window))
 		_tab_row.add_child(tab)
 		_tabs[window] = tab
 		_fit_tabs()
 	_set_active(window)
-
-
-func _on_window_title_changed(window: Node) -> void:
-	if _tabs.has(window):
-		_label_tab(_tabs[window], window)
-
-
-func _label_tab(tab: Button, window: Node) -> void:
-	tab.text = get_window_name(window)
-	tab.tooltip_text = window.title  # full name when it's cut off
 
 
 func _on_window_closed(window: Node) -> void:

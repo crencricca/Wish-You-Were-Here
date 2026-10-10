@@ -1,29 +1,12 @@
 [gd_scene format=3 uid="uid://cq6iibnr543yu"]
 
 [ext_resource type="Texture2D" uid="uid://bor6ecf3utb00" path="res://assets/images/desktop.jpg" id="1_xxa2h"]
-[ext_resource type="Texture2D" uid="uid://dxb3riwdxvuy6" path="res://assets/images/folder.png" id="2_7gre8"]
-[ext_resource type="Texture2D" uid="uid://du4lo82bixmwy" path="res://assets/images/txt.svg" id="2_81rff"]
-[ext_resource type="Script" uid="uid://jkgaheca5mwd" path="res://desktop.gd" id="4_desktop"]
+[ext_resource type="Script" uid="uid://jkgaheca5mwd" path="res://scripts/desktop.gd" id="4_desktop"]
 [ext_resource type="PackedScene" uid="uid://p3fw06ovrg6j" path="res://scenes/text_editor.tscn" id="5_textwin"]
 [ext_resource type="PackedScene" uid="uid://bhtj84v0l6tgx" path="res://scenes/toolbar.tscn" id="6_toolbar"]
 [ext_resource type="PackedScene" uid="uid://bq3fo1d2icn7k" path="res://scenes/folder_icon.tscn" id="7_foldericon"]
-[ext_resource type="PackedScene" uid="uid://c8fw1ndwq0f5x" path="res://scenes/folder_window.tscn" id="8_folderwin"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_icon"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_icon_pressed"]
-bg_color = Color(0, 0, 0.5, 0.32)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_icon_hover"]
-bg_color = Color(0, 0, 0.5, 0.18)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+[ext_resource type="PackedScene" uid="uid://cyu1xda8ud0x2" path="res://scenes/folder.tscn" id="8_folderwin"]
+[ext_resource type="PackedScene" uid="uid://dtx7f1icn4n0q" path="res://scenes/text_file_icon.tscn" id="9_txticon"]
 
 [node name="Desktop" type="Node2D" unique_id=503711665]
 script = ExtResource("4_desktop")
@@ -33,35 +16,15 @@ position = Vector2(592, 298)
 scale = Vector2(0.21041667, 0.19735478)
 texture = ExtResource("1_xxa2h")
 
-[node name="Text File" type="Sprite2D" parent="." unique_id=436141959]
-position = Vector2(73, 76)
-scale = Vector2(0.098148145, 0.099999994)
-texture = ExtResource("2_81rff")
+[node name="README" parent="." unique_id=827520081 node_paths=PackedStringArray("window") instance=ExtResource("9_txticon")]
+position = Vector2(20, 22)
+file_name = "README.txt"
+window = NodePath("../README App")
 
-[node name="README" type="Node2D" parent="." unique_id=827520081]
-
-[node name="README Label" type="RichTextLabel" parent="README" unique_id=214377244]
-offset_left = 25.187508
-offset_top = 120.843735
-offset_right = 122.18751
-offset_bottom = 154.84373
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 16
-text = "README"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="README Icon" type="Button" parent="README" unique_id=534099686]
-offset_left = 20.0
-offset_top = 22.0
-offset_right = 126.0
-offset_bottom = 155.0
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_icon")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_icon_pressed")
-theme_override_styles/hover = SubResource("StyleBoxFlat_icon_hover")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_icon_pressed")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_icon")
+[node name="Notes" parent="." unique_id=1405828817 node_paths=PackedStringArray("window") instance=ExtResource("9_txticon")]
+position = Vector2(137, 336)
+file_name = "Notes.txt"
+window = NodePath("../Notes App")
 
 [node name="1990s" parent="." unique_id=1611720034 node_paths=PackedStringArray("window") instance=ExtResource("7_foldericon")]
 position = Vector2(22, 151)
@@ -103,7 +66,9 @@ This is a sample letter from your dad, who mysteriously disappeared! Your task i
 Love,
 Dad"
 
+[node name="Notes App" parent="." unique_id=1764302958 instance=ExtResource("5_textwin")]
+visible = false
+position = Vector2(603, 173)
+
 [node name="Toolbar" parent="." unique_id=1288405533 instance=ExtResource("6_toolbar")]
 z_index = 1
-
-[connection signal="pressed" from="README/README Icon" to="." method="_on_readme_icon_pressed"]

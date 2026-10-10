@@ -2,8 +2,19 @@
 
 [ext_resource type="FontFile" uid="uid://d1iec5rcswjv5" path="res://assets/fonts/w95fa/W95F.otf" id="1_abgot"]
 [ext_resource type="Texture2D" uid="uid://dxb3riwdxvuy6" path="res://assets/images/folder.png" id="2_mpvgd"]
+[ext_resource type="Script" uid="uid://dj6sqc7pks48e" path="res://scripts/folder_window.gd" id="3_script"]
+[ext_resource type="StyleBox" uid="uid://b7wfr4m3shd0w" path="res://assets/styles/window_frame.tres" id="4_frame"]
 
 [node name="Folder App" type="Node2D" unique_id=729388574]
+script = ExtResource("3_script")
+icon = ExtResource("2_mpvgd")
+
+[node name="Frame" type="Panel" parent="." unique_id=604187352]
+offset_left = -3.0
+offset_top = -4.0
+offset_right = 491.0
+offset_bottom = 307.0
+theme_override_styles/panel = ExtResource("4_frame")
 
 [node name="Top Bar" type="ColorRect" parent="." unique_id=758415046]
 offset_top = -1.0
@@ -24,7 +35,7 @@ offset_bottom = 304.0
 
 [node name="Title" type="RichTextLabel" parent="." unique_id=75417903]
 offset_left = 18.0
-offset_right = 47.0
+offset_right = 464.0
 offset_bottom = 19.0
 theme_override_fonts/normal_font = ExtResource("1_abgot")
 theme_override_font_sizes/normal_font_size = 12
@@ -46,3 +57,20 @@ theme_override_fonts/normal_font = ExtResource("1_abgot")
 theme_override_font_sizes/normal_font_size = 12
 text = "File   Edit   View   Help  "
 vertical_alignment = 1
+
+[node name="Close Button" type="Button" parent="." unique_id=1203365921]
+offset_left = 468.0
+offset_top = 1.0
+offset_right = 486.0
+offset_bottom = 17.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_fonts/font = ExtResource("1_abgot")
+theme_override_font_sizes/font_size = 10
+text = "X"
+
+[node name="Contents" type="HFlowContainer" parent="." unique_id=1377650949]
+offset_left = 8.0
+offset_top = 47.0
+offset_right = 480.0
+offset_bottom = 296.0
+mouse_filter = 2

@@ -17,12 +17,17 @@ extends Node2D
 @onready var _button: Button = $Button
 
 
+## Names the window before any window's _ready runs, so it sets up
+## its title with the right name no matter where it sits in the tree.
+func _enter_tree() -> void:
+	if window and not Engine.is_editor_hint():
+		window.folder_name = folder_name
+
+
 func _ready() -> void:
 	_label.text = folder_name
 	if Engine.is_editor_hint():
 		return  # only the label should update in the editor
-	if window:
-		window.folder_name = folder_name
 	_button.pressed.connect(_on_pressed)
 
 

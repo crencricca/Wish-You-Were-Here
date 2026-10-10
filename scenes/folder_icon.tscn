@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bq3fo1d2icn7k"]
 
-[ext_resource type="Script" path="res://folder_icon.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://cpbokura5l2u7" path="res://scripts/folder_icon.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://dxb3riwdxvuy6" path="res://assets/images/folder.png" id="2_folder"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_icon"]
