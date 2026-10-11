@@ -43,7 +43,7 @@ text = "1990s"
 vertical_alignment = 1
 
 [node name="Folder" type="Sprite2D" parent="." unique_id=326660585]
-position = Vector2(10, 8)
+position = Vector2(10, 9)
 scale = Vector2(0.002500019, 0.003022993)
 texture = ExtResource("2_mpvgd")
 

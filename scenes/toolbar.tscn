@@ -3,6 +3,7 @@
 [ext_resource type="FontFile" uid="uid://d1iec5rcswjv5" path="res://assets/fonts/w95fa/W95F.otf" id="1_wdy5x"]
 [ext_resource type="Texture2D" uid="uid://mcp4tenwmxp5" path="res://assets/images/heart.svg" id="2_0lhma"]
 [ext_resource type="Script" uid="uid://cgou3rj8uncl4" path="res://scripts/toolbar.gd" id="3_toolbar"]
+[ext_resource type="Texture2D" uid="uid://byslvtd21cjiy" path="res://assets/images/power_icon.svg" id="4_power"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w95btn"]
 content_margin_left = 6.0
@@ -30,6 +31,15 @@ border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_focus"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_menu_item"]
+content_margin_left = 6.0
+content_margin_right = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_menu_item_hover"]
+content_margin_left = 6.0
+content_margin_right = 6.0
+bg_color = Color(0, 0, 0.5019608, 1)
+
 [node name="Toolbar" type="Node2D" unique_id=147399699]
 script = ExtResource("3_toolbar")
 
@@ -40,7 +50,7 @@ offset_right = 1154.0
 offset_bottom = 648.0
 color = Color(0.69803923, 0.69803923, 0.69803923, 1)
 
-[node name="Button" type="Button" parent="." unique_id=1519933146]
+[node name="Start Button" type="Button" parent="." unique_id=1519933146]
 offset_left = 2.0
 offset_top = 618.0
 offset_right = 70.0
@@ -49,6 +59,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_constants/h_separation = 4
 theme_override_constants/icon_max_width = 16
 theme_override_fonts/font = ExtResource("1_wdy5x")
@@ -56,7 +67,9 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_w95btn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_w95btn_pressed")
 theme_override_styles/hover = SubResource("StyleBoxFlat_w95btn")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_w95btn_pressed")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
+toggle_mode = true
 text = "Start"
 icon = ExtResource("2_0lhma")
 
@@ -93,3 +106,53 @@ text = "Window"
 alignment = 0
 text_overrun_behavior = 3
 clip_text = true
+
+[node name="Start Menu" type="Node2D" parent="." unique_id=820658717]
+visible = false
+position = Vector2(1, -3)
+
+[node name="Shadow" type="Panel" parent="Start Menu" unique_id=1794560221]
+offset_top = 509.0
+offset_right = 213.0
+offset_bottom = 618.0
+scale = Vector2(0.56, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="BG" type="ColorRect" parent="Start Menu" unique_id=72715718]
+offset_left = -1.0
+offset_top = 507.0
+offset_right = 209.0
+offset_bottom = 615.0
+scale = Vector2(0.56, 1)
+color = Color(0.69803923, 0.69803923, 0.69803923, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Shut Down" type="Button" parent="Start Menu" unique_id=1092736415]
+offset_left = 3.0
+offset_top = 580.0
+offset_right = 115.0
+offset_bottom = 608.0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_constants/h_separation = 6
+theme_override_constants/icon_max_width = 16
+theme_override_fonts/font = ExtResource("1_wdy5x")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_menu_item")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_menu_item_hover")
+theme_override_styles/hover = SubResource("StyleBoxFlat_menu_item_hover")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_menu_item_hover")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
+text = "Shut Down"
+icon = ExtResource("4_power")
+alignment = 0
+
+[connection signal="toggled" from="Start Button" to="." method="_on_start_button_toggled"]
+[connection signal="pressed" from="Start Menu/Shut Down" to="." method="_on_shut_down_pressed"]

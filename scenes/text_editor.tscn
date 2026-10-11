@@ -5,6 +5,22 @@
 [ext_resource type="Texture2D" uid="uid://du4lo82bixmwy" path="res://assets/images/txt.svg" id="3_txt"]
 [ext_resource type="StyleBox" uid="uid://b7wfr4m3shd0w" path="res://assets/styles/window_frame.tres" id="9_frame"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_editable"]
+content_margin_left = 6.0
+content_margin_top = 4.0
+content_margin_right = 6.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_focus"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_read_only"]
+content_margin_left = 6.0
+content_margin_top = 4.0
+content_margin_right = 6.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8784314, 0.8784314, 0.8784314, 1)
+
 [node name="Text Window" type="Node2D" unique_id=226287507]
 script = ExtResource("2_textwin")
 icon = ExtResource("3_txt")
@@ -60,9 +76,13 @@ offset_right = 488.0
 offset_bottom = 304.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_readonly_color = Color(0, 0, 0, 1)
-theme_override_colors/background_color = Color(1, 1, 1, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_sdthn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_editable")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_read_only")
 wrap_mode = 1
+caret_blink = true
 
 [node name="Close Button" type="Button" parent="." unique_id=7437325]
 offset_left = 460.0

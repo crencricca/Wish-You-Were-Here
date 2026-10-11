@@ -1,3 +1,4 @@
 - browser
 - settings
 - start menu
+- subfolders (years)

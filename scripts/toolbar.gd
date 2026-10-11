@@ -12,6 +12,7 @@ var _active: Node
 
 @onready var _tab_row: HBoxContainer = $Tabs
 @onready var _template: Button = $TabTemplate
+@onready var _start_menu: Node2D = $"Start Menu"
 
 
 ## Gives `window` a tab while it's open.
@@ -73,3 +74,13 @@ func _fit_tabs() -> void:
 	var width := minf(MAX_TAB_WIDTH, (_tab_row.size.x - gaps) / count)
 	for tab: Button in _tabs.values():
 		tab.custom_minimum_size.x = width
+
+
+## The Start button stays pushed in while the menu is open.
+func _on_start_button_toggled(toggled_on: bool) -> void:
+	_start_menu.visible = toggled_on
+
+
+## Quits the game, the same as the power button on the start screen.
+func _on_shut_down_pressed() -> void:
+	get_tree().quit()
